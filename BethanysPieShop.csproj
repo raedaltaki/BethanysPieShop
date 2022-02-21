@@ -9,20 +9,20 @@
 
   <ItemGroup>
     <Compile Remove="NewFolder1\**" />
-    <Compile Remove="NewFolder\**" />
     <Content Remove="NewFolder1\**" />
-    <Content Remove="NewFolder\**" />
     <EmbeddedResource Remove="NewFolder1\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
     <None Remove="NewFolder1\**" />
-    <None Remove="NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Contact\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Views\NewFolder\" />
     <Folder Include="Views\Order\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Components\CategoryMenu\Default.cshtml" />
+    <None Include="Views\Shared\Components\ShoppingCartSummary\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

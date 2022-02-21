@@ -8,17 +8,19 @@ namespace BethanysPieShop.Models
         {
 
         }
-        public DbSet<Pie> Pies { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Pie> Pies { get; set; }
+
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             //seed categories
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Fruit pies", Description = "a" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Cheese cakes", Description = "b" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Seasonal pies", Description = "c" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Fruit pies" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Cheese cakes" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Seasonal pies" });
 
             //seed pies
 
@@ -202,7 +204,5 @@ namespace BethanysPieShop.Models
                 AllergyInformation = ""
             });
         }
-
-
     }
 }
