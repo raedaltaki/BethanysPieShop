@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Contact\" />
     <Folder Include="Views\NewFolder\" />
     <Folder Include="Views\Order\" />
   </ItemGroup>
