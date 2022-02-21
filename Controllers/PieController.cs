@@ -26,5 +26,36 @@ namespace BethanysPieShop.Controllers
 
             return View(piesListViewModel);
         }
+
+        //[Route("[controller]/Details/{id}")]
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieById(id);
+            if (pie == null)
+            {
+                return NotFound();
+            }
+
+            return View(pie);
+        }
+
+        //[Route("[controller]/Details/{id}")]
+        //[HttpPost]
+        //public IActionResult Details(int id, string review)
+        //{
+        //    var pie = _pieRepository.GetPieById(id);
+        //    if (pie == null)
+        //    {
+        //        _logger.LogWarning(LogEventIds.GetPieIdNotFound, new Exception("Pie not found"), "Pie with id {0} not found", id);
+        //        return NotFound();
+        //    }
+
+        //    string encodedReview = _htmlEncoder.Encode(review);
+
+        //    _pieReviewRepository.AddPieReview(new PieReview() { Pie = pie, Review = encodedReview });
+
+        //    return View(new PieDetailViewModel() { Pie = pie });
+        //}
+
     }
 }
